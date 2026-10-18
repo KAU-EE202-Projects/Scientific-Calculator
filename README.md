@@ -32,16 +32,16 @@ The project strictly separates the Graphical User Interface (GUI) from the under
 ## 📁 Repository Structure
 ```text
 Scientific-Calculator/
-│── main.py               # Main application entry point
-│── ui/                   # PyQt User Interface components
-│   ├── main_window.py    # Main window setup & navigation
-│   └── styles.qss        # Custom UI styling (Optional)
-│── core/                 # Business logic and OOP engines
-│   ├── calculator.py     # Scientific calculation engine
-│   ├── solver.py         # 2-Equation system solver
-│   └── plotter.py        # Matplotlib plotting engine
-│── utils/                # Helper scripts
-│   └── validator.py      # Input validation & error handling
-│── tests/                # Test cases and verification
-│── docs/                 # Project documentation & UML diagrams
-└── README.md             # Project overview
+│── main.py                    # Main application entry point
+│── ui/                        # PyQt User Interface components
+│   ├── main_window.py         # Main window setup & navigation
+│   └── styles.qss             # Custom UI styling (Optional)
+│── core/                      # Business logic and OOP engines
+│   ├── calculator.py          # Scientific calculation engine
+│   ├── solver.py              # 2-Equation system solver
+│   └── plotter.py             # Matplotlib plotting engine
+│   └── expression_parser.py   # User-defined function parser & validator
+│── utils/                     # Helper scripts
+│   └── validator.py           # Input validation & error handling
+│── docs/                      # Project documentation & UML diagrams
+└── README.md                  # Project overview
