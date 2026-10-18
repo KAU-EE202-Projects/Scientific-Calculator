@@ -26,42 +26,42 @@ class CasioCalculatorGUI {
 
 class ScientificCalculator {
     <<Fatani>>
-    -float memoryValue
-    -String currentExpression
-    -AngleMode angleMode
-    +__init__(mode)
-    +set_memory(value)
-    +get_memory() float
-    +add(a, b) float
-    +subtract(a, b) float
-    +multiply(a, b) float
-    +divide(a, b) float
-    +sin(angle) float
-    +cos(angle) float
-    +tan(angle) float
-    +arcsin(value) float
-    +arccos(value) float
-    +arctan(value) float
-    +ln(value) float
-    +log(value) float
-    +power(base, exponent) float
-    +root(value, n) float
-    +factorial(n) Integer
-    +switch_angle_mode()
-    +clear()
+    -memoryValue : float
+    -currentExpression : String
+    -angleMode : AngleMode
+    +__init__(mode: AngleMode = Radian)
+    +set_memory(value: float) : None
+    +get_memory() : float
+    +add(a: float, b: float) : float
+    +subtract(a: float, b: float) : float
+    +multiply(a: float, b: float) : float
+    +divide(a: float, b: float) : float
+    +sin(angle: float) : float
+    +cos(angle: float) : float
+    +tan(angle: float) : float
+    +arcsin(value: float) : float
+    +arccos(value: float) : float
+    +arctan(value: float) : float
+    +ln(value: float) : float
+    +log(value: float) : float
+    +power(base: float, exponent: float) : float
+    +root(value: float, n: float = 2.0) : float
+    +factorial(n: float) : float
+    +switch_angle_mode() : None
+    +clear() : None
 }
 
 class EquationSolver {
     <<Naif>>
-    -float a1
-    -float b1
-    -float c1
-    -float a2
-    -float b2
-    -float c2
+    -a1 : float
+    -b1 : float
+    -c1 : float
+    -a2 : float
+    -b2 : float
+    -c2 : float
     +__init__()
-    +has_unique_solution(a1, b1, a2, b2) Tuple
-    +solve_system(a1, b1, c1, a2, b2, c2) Tuple
+    +has_unique_solution(a1: float, b1: float, a2: float, b2: float) : Tuple(bool, float)
+    +solve_system(a1: float, b1: float, c1: float, a2: float, b2: float, c2: float) : Tuple(float, float)
 }
 
 class FunctionPlotter {
