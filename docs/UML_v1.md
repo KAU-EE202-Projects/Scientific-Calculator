@@ -26,26 +26,26 @@ class CasioCalculatorGUI {
 
 class ScientificCalculator {
     <<Fatani>>
-    -Double memoryValue
+    -float memoryValue
     -String currentExpression
     -AngleMode angleMode
     +__init__(mode)
     +set_memory(value)
-    +get_memory() Double
-    +add(a, b) Double
-    +subtract(a, b) Double
-    +multiply(a, b) Double
-    +divide(a, b) Double
-    +sin(angle) Double
-    +cos(angle) Double
-    +tan(angle) Double
-    +arcsin(value) Double
-    +arccos(value) Double
-    +arctan(value) Double
-    +ln(value) Double
-    +log(value) Double
-    +power(base, exponent) Double
-    +root(value, n) Double
+    +get_memory() float
+    +add(a, b) float
+    +subtract(a, b) float
+    +multiply(a, b) float
+    +divide(a, b) float
+    +sin(angle) float
+    +cos(angle) float
+    +tan(angle) float
+    +arcsin(value) float
+    +arccos(value) float
+    +arctan(value) float
+    +ln(value) float
+    +log(value) float
+    +power(base, exponent) float
+    +root(value, n) float
     +factorial(n) Integer
     +switch_angle_mode()
     +clear()
@@ -53,12 +53,12 @@ class ScientificCalculator {
 
 class EquationSolver {
     <<Naif>>
-    -Double a1
-    -Double b1
-    -Double c1
-    -Double a2
-    -Double b2
-    -Double c2
+    -float a1
+    -float b1
+    -float c1
+    -float a2
+    -float b2
+    -float c2
     +__init__()
     +has_unique_solution(a1, b1, a2, b2) Tuple
     +solve_system(a1, b1, c1, a2, b2, c2) Tuple
