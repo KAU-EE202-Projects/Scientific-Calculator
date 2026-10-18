@@ -1,6 +1,4 @@
-# Initial UML Class Diagram - Checkpoint 1
 # UML Class Diagram (v1) - EE202 Scientific Calculator
-
 Initial UML for Checkpoint 1. The diagram is written in Mermaid, so GitHub and VS Code (with a Mermaid preview extension) render it directly.
 
 ```mermaid
@@ -9,20 +7,20 @@ direction TB
 
 class CasioCalculatorGUI {
     <<Fahad>>
-    -QStackedWidget screenStack
-    -QLineEdit calcScreen
-    -QWidget solverWidget
-    -QWidget plotterWidget
-    -ScientificCalculator scientificCalc
-    -EquationSolver equationSolver
-    -FunctionPlotter functionPlotter
-    -InputValidator validator
+    -screenStack : QStackedWidget
+    -calcScreen : QLineEdit
+    -solverWidget : QWidget
+    -plotterWidget : QWidget
+    -scientificCalc : ScientificCalculator
+    -equationSolver : EquationSolver
+    -functionPlotter : FunctionPlotter
+    -validator : InputValidator
     +__init__()
-    +init_ui()
-    +create_keypad()
-    +on_button_clicked(buttonText)
-    +switch_mode(modeIndex)
-    +display_error(message)
+    +init_ui() None
+    +create_keypad() None
+    +on_button_clicked(buttonText: String) None
+    +switch_mode(modeIndex: int) None
+    +display_error(message: String) None
 }
 
 class ScientificCalculator {
@@ -31,25 +29,25 @@ class ScientificCalculator {
     -currentExpression : String
     -angleMode : AngleMode
     +__init__(mode: AngleMode = Radian)
-    +set_memory(value: float) : None
-    +get_memory() : float
-    +add(a: float, b: float) : float
-    +subtract(a: float, b: float) : float
-    +multiply(a: float, b: float) : float
-    +divide(a: float, b: float) : float
-    +sin(angle: float) : float
-    +cos(angle: float) : float
-    +tan(angle: float) : float
-    +arcsin(value: float) : float
-    +arccos(value: float) : float
-    +arctan(value: float) : float
-    +ln(value: float) : float
-    +log(value: float) : float
-    +power(base: float, exponent: float) : float
-    +root(value: float, n: float = 2.0) : float
-    +factorial(n: float) : float
-    +switch_angle_mode() : None
-    +clear() : None
+    +set_memory(value: float) None
+    +get_memory() float
+    +add(a: float, b: float) float
+    +subtract(a: float, b: float) float
+    +multiply(a: float, b: float) float
+    +divide(a: float, b: float) float
+    +sin(angle: float) float
+    +cos(angle: float) float
+    +tan(angle: float) float
+    +arcsin(value: float) float
+    +arccos(value: float) float
+    +arctan(value: float) float
+    +ln(value: float) float
+    +log(value: float) float
+    +power(base: float, exponent: float) float
+    +root(value: float, n: float = 2.0) float
+    +factorial(n: float) float
+    +switch_angle_mode() None
+    +clear() None
 }
 
 class EquationSolver {
@@ -61,8 +59,8 @@ class EquationSolver {
     -b2 : float
     -c2 : float
     +__init__()
-    +has_unique_solution(a1: float, b1: float, a2: float, b2: float) : Tuple(bool, float)
-    +solve_system(a1: float, b1: float, c1: float, a2: float, b2: float, c2: float) : Tuple(float, float)
+    +has_unique_solution(a1: float, b1: float, a2: float, b2: float) Tuple~bool, float~
+    +solve_system(a1: float, b1: float, c1: float, a2: float, b2: float, c2: float) Tuple~float, float~
 }
 
 class FunctionPlotter {
@@ -73,30 +71,30 @@ class FunctionPlotter {
     -resolution : int
     -parser : ExpressionParser
     +__init__()
-    +plot_x(start: float, end: float) : None
-    +plot_x_squared(start: float, end: float) : None
-    +plot_x_cubed(start: float, end: float) : None
-    +plot_sin(start: float, end: float) : None
-    +plot_cos(start: float, end: float) : None
-    +plot_exp(start: float, end: float) : None
-    +plot_ln(start: float, end: float) : None
-    +plot_custom(expression: String, start: float, end: float) : None
-    +plot_function(name: String, start: float, end: float) : None
-    +get_canvas() : FigureCanvas
-    -_validate_range(start: float, end: float) : None
-    -_check_domain(name: String, start: float, end: float) : None
-    -_draw(x_values: ndarray, y_values: ndarray, title: String) : None
+    +plot_x(start: float, end: float) None
+    +plot_x_squared(start: float, end: float) None
+    +plot_x_cubed(start: float, end: float) None
+    +plot_sin(start: float, end: float) None
+    +plot_cos(start: float, end: float) None
+    +plot_exp(start: float, end: float) None
+    +plot_ln(start: float, end: float) None
+    +plot_custom(expression: String, start: float, end: float) None
+    +plot_function(name: String, start: float, end: float) None
+    +get_canvas() FigureCanvas
+    -_validate_range(start: float, end: float) None
+    -_check_domain(name: String, start: float, end: float) None
+    -_draw(x_values: ndarray, y_values: ndarray, title: String) None
 }
 
 class ExpressionParser {
     <<Hamza>>
-    -str expression
-    -dict allowed_names
+    -expression : String
+    -allowed_names : dict
     +__init__()
-    +set_expression(text)
-    +validate()
-    +evaluate(x_values)
-    -_normalize(text) str
+    +set_expression(text: String) None
+    +validate() bool
+    +evaluate(x_values: ndarray) ndarray
+    -_normalize(text: String) String
 }
 
 class InputValidator {
