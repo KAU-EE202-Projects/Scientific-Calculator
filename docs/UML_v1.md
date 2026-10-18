@@ -8,6 +8,7 @@ classDiagram
 direction TB
 
 class CasioCalculatorGUI {
+    <<Fahad>>
     -QStackedWidget screenStack
     -QLineEdit calcScreen
     -QWidget solverWidget
@@ -66,25 +67,25 @@ class EquationSolver {
 
 class FunctionPlotter {
     <<Hamza>>
-    -Figure figure
-    -Axes axes
-    -FigureCanvas canvas
-    -int resolution
-    -ExpressionParser parser
+    -figure : Figure
+    -axes : Axes
+    -canvas : FigureCanvas
+    -resolution : int
+    -parser : ExpressionParser
     +__init__()
-    +plot_x(start, end)
-    +plot_x_squared(start, end)
-    +plot_x_cubed(start, end)
-    +plot_sin(start, end)
-    +plot_cos(start, end)
-    +plot_exp(start, end)
-    +plot_ln(start, end)
-    +plot_custom(expression, start, end)
-    +plot_function(name, start, end)
-    +get_canvas() FigureCanvas
-    -_validate_range(start, end)
-    -_check_domain(name, start, end)
-    -_draw(x_values, y_values, title)
+    +plot_x(start: float, end: float) : None
+    +plot_x_squared(start: float, end: float) : None
+    +plot_x_cubed(start: float, end: float) : None
+    +plot_sin(start: float, end: float) : None
+    +plot_cos(start: float, end: float) : None
+    +plot_exp(start: float, end: float) : None
+    +plot_ln(start: float, end: float) : None
+    +plot_custom(expression: String, start: float, end: float) : None
+    +plot_function(name: String, start: float, end: float) : None
+    +get_canvas() : FigureCanvas
+    -_validate_range(start: float, end: float) : None
+    -_check_domain(name: String, start: float, end: float) : None
+    -_draw(x_values: ndarray, y_values: ndarray, title: String) : None
 }
 
 class ExpressionParser {
