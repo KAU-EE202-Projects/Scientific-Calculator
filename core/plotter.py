@@ -10,9 +10,7 @@ in the terminal
 
 #Importing Libraries
 import matplotlib.pyplot as plt #Importing plot
-#from core.expression_parser import ExpressionParser #Importing the user defined function class
 import numpy as np #Import numpy to convert numbers into arrays
-import math #To use its' mathmetical functions
 from matplotlib.figure import Figure #importing figure class from matplotlib.figure
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas #Importing FigureCanvasQTAgg class to display the plot in the UI
 
