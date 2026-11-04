@@ -23,31 +23,6 @@ KEYS = [  # keypad rows, same layout as the sketch; each key = (text, text when 
     [("0", None, "digit"), (".", None, "digit"), ("±", None, "digit"), ("=", None, "equals")],  # last row
 ]
 
-STYLE = """
-QMainWindow { background: #1b1c20; }  /* dark window */
-QLabel { color: white; font-size: 18px; }  /* all labels */
-QLabel#result { color: #8fe3d9; font-size: 22px; font-weight: 600; }  /* solver result / plot message */
-QLabel#result[error="true"] { color: #ff6b6b; font-size: 17px; }  /* the same labels when they show an error */
-QLineEdit, QComboBox { background: #2a2c33; color: white; border-radius: 6px; padding: 6px; font-size: 16px; }  /* input boxes and combo box */
-QComboBox QAbstractItemView { background: #2a2c33; color: white; }  /* the list that drops down from the combo box */
-QLineEdit#calcScreen { background: #c8d0bd; color: #1a1d16; border-radius: 10px; padding: 8px 14px; font-size: 32px; }  /* calculator screen */
-QLineEdit#calcScreen[error="true"] { color: #a01818; font-size: 17px; }  /* error message: small red text */
-QPushButton, QToolButton { border: none; border-radius: 9px; font-size: 19px; font-weight: 600; color: white; min-height: 52px; }  /* all keys */
-QPushButton[role="digit"] { background: #3a3d45; }  /* number keys */
-QPushButton[role="func"] { background: #2a2c33; }  /* function keys */
-QPushButton[role="func"][shifted="true"] { color: #f5c04a; }  /* function keys turn yellow while Shift is on */
-QPushButton[role="op"] { background: #d98a1f; }  /* + - x / */
-QPushButton[role="equals"] { background: #2f7fd1; }  /* = key */
-QPushButton[role="clear"] { background: #b5413a; }  /* C and backspace */
-QPushButton[role="shift"] { background: #4a3d1c; color: #f5c04a; }  /* Shift key (off) */
-QPushButton[role="shift"][active="true"] { background: #f5c04a; color: #1b1c20; }  /* Shift key (on) */
-QPushButton[role="angle"] { background: #1f4d4a; font-size: 14px; }  /* Deg/Rad key */
-QPushButton[role="action"] { background: #2f7fd1; }  /* Solve and Plot buttons */
-QToolButton { background: #3a3d45; font-size: 24px; }  /* the three-lines menu key */
-QToolButton::menu-indicator { image: none; }  /* hide the little arrow on the menu key */
-QPushButton:pressed { background: #666b78; }  /* feedback while a key is held down */
-"""
-
 
 class CasioCalculatorGUI(QMainWindow):  # the window; inherits QMainWindow as in the UML
     def __init__(self):  # runs when the window object is created
@@ -76,7 +51,6 @@ class CasioCalculatorGUI(QMainWindow):  # the window; inherits QMainWindow as in
         self.init_ui()  # build all the widgets
 
     def init_ui(self):  # creates the window contents
-        self.setStyleSheet(STYLE)  # apply the colours defined above
         self._screenStack = QStackedWidget()  # shows one page at a time
         self.setCentralWidget(self._screenStack)  # the stack fills the window
         self._menu = QMenu(self)  # the menu opened by the three-lines key
