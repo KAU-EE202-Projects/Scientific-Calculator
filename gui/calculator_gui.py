@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import (QMainWindow, QWidget, QStackedWidget, QVBoxLayout, 
 from core.calculator import ScientificCalculator  # teammate's engine: ALL the calculator maths is done there
 from core.solver import EquationSolver  # teammate's class that solves the two equations
 from core.custom_plotter import custom_plotter as CustomFunctionPlotter  # teammate's plotter (UML name: CustomFunctionPlotter)
-from core.validator import InputValidator  # teammate's class that checks the text typed by the user
+from utils.validator import InputValidator  # teammate's class that checks the text typed by the user
 
 PAGES = ["Scientific Calculator", "Equation Solver", "Function Plotting"]  # the three pages shown by the menu
 SIZES = [(380, 620), (460, 400), (760, 600)]  # window size (width, height) for each page
