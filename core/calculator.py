@@ -1,5 +1,6 @@
 import math
 
+
 # Scientific Calculator Logic (OOP Engine)
 class ScientificCalculator:
     def __init__(self, mode="radian"):
@@ -64,9 +65,11 @@ class ScientificCalculator:
     def factorial(self, n):
         return float(math.factorial(int(n)))
 
+    def pi(self):
+        return float(math.pi)
+
     def switch_angle_mode(self):
         self.angleMode = "degree" if self.angleMode == "radian" else "radian"
 
     def clear(self):
         self.currentExpression = ""
-
