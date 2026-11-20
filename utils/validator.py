@@ -1,10 +1,12 @@
 # Input Validation & Exception Handling
+from core.plotter import FunctionPlotter
+
 
 class InputValidator:
     def __init__(self):
         # Supported mathematical functions across the calculator and plotter
         self.allowed_functions = [
-            "linear", "quadratic", "cubic", "sin", "cos", 
+            "linear", "quadratic", "cubic", "sin", "cos",
             "exponential", "ln", "tan", "exp", "log", "sqrt", "abs"
         ]
 
@@ -61,8 +63,8 @@ class InputValidator:
 
     # 6. Validate the plotting interval [start, end] and function domain
     def validate_plot_range(self, start, end, func):
-        start_val = self.validate_numeric(start, "Start value")
-        end_val = self.validate_numeric(end, "End value")
+        start_val = FunctionPlotter.parse_limit(self.validate_not_empty(start, "Start value"))
+        end_val = FunctionPlotter.parse_limit(self.validate_not_empty(end, "End value"))
 
         if start_val >= end_val:
             raise ValueError("Start value must be less than End value")
