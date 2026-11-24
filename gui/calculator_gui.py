@@ -508,7 +508,7 @@ class CasioCalculatorGUI(QMainWindow):
             a1, b1, c1, a2, b2, c2 = self._validator.validate_equation_coeffs(*texts)
             x, y = self._equationSolver.solve_system(a1, b1, c1, a2, b2, c2)
             self._solverResultLabel.setText(
-                f"x = {self._format_number(x)}\ny = {self._format_number(y)}")
+            f"x = {x:.3f}\ny = {y:.3f}")
         except (ValueError, ArithmeticError) as error:
             self._solverResultLabel.setText("")
             QMessageBox.warning(self, "Equation Solver", self._describe_error(error))
