@@ -263,7 +263,7 @@ class ScientificCalculatorGUI(QMainWindow):
         elif name == "x!":
             result = self.calc.factorial(self.validator.validate_domain("factorial", value))
         elif name == "eˣ":
-            result = self.calc.power(math.e, value)  # the calculator class has no exp()
+            result = self.calc.exp(value)
         else:
             return
 
