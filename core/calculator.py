@@ -61,7 +61,10 @@ class ScientificCalculator:
 
     def root(self, value, n=2.0):
         return float(value ** (1.0 / n))
-
+    
+    def exp(self, value):
+        return float(math.exp(value))
+    
     def factorial(self, n):
         return float(math.factorial(int(n)))
 
